@@ -2,7 +2,7 @@ import styles from "./Contact.module.css";
 import { MdPerson } from "react-icons/md";
 import { MdPhone } from "react-icons/md";
 
-const Contact = ({ data }) => {
+const Contact = ({ data, onDelete }) => {
   return (
     <>
       <div className={styles.container}>
@@ -15,7 +15,7 @@ const Contact = ({ data }) => {
           <p className={styles.text}>{data.number}</p>
         </div>
       </div>
-      <button type="button" className={styles.button}>
+      <button type="button" className={styles.button} onClick={() => onDelete(data.id)}>
         Delete
       </button>
     </>

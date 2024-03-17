@@ -22,6 +22,12 @@ function App() {
     });
   };
 
+  const deleteContact = (contactId) => {
+    setContact((prevContacts) => {
+      return prevContacts.filter((contact) => contact.id !== contactId);
+    });
+  };
+
   const visibleContacts = contacts.filter((contact) =>
     contact.name.toLowerCase().includes(search.toLowerCase())
   );
@@ -31,7 +37,7 @@ function App() {
       <h1>Phonebook</h1>
       <ContactForm onAdd={addContact} />
       <SearchBox value={search} onSearch={setSearch} />
-      <ContactList contacts={visibleContacts} />
+      <ContactList contacts={visibleContacts} onDelete={deleteContact} />
     </div>
   );
 }
