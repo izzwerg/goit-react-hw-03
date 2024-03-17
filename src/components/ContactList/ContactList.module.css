@@ -8,8 +8,7 @@
 .item {
     display: flex;
     justify-content: space-between;
-    max-width: 360px;
-    min-width: 300px;
+    width: 300px;
     padding: 8px;
     border: 1px solid black;
     border-radius: 8px;

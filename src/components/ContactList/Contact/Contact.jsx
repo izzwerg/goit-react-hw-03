@@ -16,7 +16,7 @@ const Contact = ({ data }) => {
         </div>
       </div>
       <button type="button" className={styles.button}>
-        Delite
+        Delete
       </button>
     </>
   );
