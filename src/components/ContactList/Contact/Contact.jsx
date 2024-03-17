@@ -15,7 +15,11 @@ const Contact = ({ data, onDelete }) => {
           <p className={styles.text}>{data.number}</p>
         </div>
       </div>
-      <button type="button" className={styles.button} onClick={() => onDelete(data.id)}>
+      <button
+        type="button"
+        className={styles.button}
+        onClick={() => onDelete(data.id)}
+      >
         Delete
       </button>
     </>

@@ -19,8 +19,9 @@ body {
   margin: 0;
 }
 
-h1, p, ul {
+h1,
+p,
+ul {
   margin: 0;
   padding: 0;
 }
-

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
@@ -12,7 +12,10 @@ const initialContacts = [
 ];
 
 function App() {
-  const [contacts, setContact] = useState(initialContacts);
+  const [contacts, setContact] = useState(() => {
+    const data = localStorage.getItem("contacts");
+    return data ? JSON.parse(data) : initialContacts;
+  });
 
   const [search, setSearch] = useState("");
 
@@ -21,6 +24,10 @@ function App() {
       return [...prevContacts, newContact];
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  });
 
   const deleteContact = (contactId) => {
     setContact((prevContacts) => {
