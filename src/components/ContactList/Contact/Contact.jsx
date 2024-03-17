@@ -7,11 +7,11 @@ const Contact = ({ data }) => {
     <>
       <div className={styles.container}>
         <div className={styles.textbox}>
-          <MdPerson size="24" />
+          <MdPerson size="24" className={styles.icon} />
           <p className={styles.text}>{data.name}</p>
         </div>
         <div className={styles.textbox}>
-          <MdPhone size="24" />
+          <MdPhone size="24" className={styles.icon} />
           <p className={styles.text}>{data.number}</p>
         </div>
       </div>
